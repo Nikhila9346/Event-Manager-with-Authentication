@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{details.event}}</h1>
+    <h3>{{details.location}}</h3>
+    <h3>{{details.date}}</h3>
+    <br><br>
+    <a href="{% url 'home' %}"><button>Back</button></a>
+{% endblock content %}

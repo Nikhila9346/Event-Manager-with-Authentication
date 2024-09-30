@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <h1>EVENT MANAGER</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">USERNAME:</label>
+        <br>
+        <input type="text" name="username">
+        <br><br>
+        <label for="">PASSWORD:</label>
+        <br>
+        <input type="password" name="pass1">
+        <br><br>
+        <label for="">CONFIRM PASSWORD:</label>
+        <br>
+        <input type="password" name="pass2">
+        <br><br>
+        <input type="submit" value="SIGNUP">
+    </form>
+
+    <h5>Already have account? <a href="{% url 'login' %}">Login</a></h5>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome Back, {{user}}</h1>
+    {% include 'event.html' %}
+
+    {% for e in event %}
+        <a href="{% url 'details' e.id %}"><h3>{{ e.event }}</h3></a>
+        <a href="{% url 'edit' e.id %}"><button>EDIT</button></a>
+        <a href="{% url 'delete' e.id %}"><button>DELETE</button></a>
+    {% endfor %}
+    <br><br>
+
+{% endblock content %}
